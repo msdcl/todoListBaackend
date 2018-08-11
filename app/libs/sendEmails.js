@@ -8,16 +8,13 @@ let sendForgotPasswordEmail = (toEmail,code)=>{
           auth: {
               user: 'msc1994dc@gmail.com',
               pass: 'msc11dc15'
-          },
-          tls:{
-              rejectUnauthorized:false
           }
           
       });
   
       // Message object
       let message = {
-          from: '"Nodemailer" msc1994dc@gmail.com',
+          from: 'msc1994dc@gmail.com',
           to: `${toEmail}`,
           subject: 'Forgot password',
           text: `Hi your secure code is - ${code}`,
