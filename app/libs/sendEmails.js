@@ -24,10 +24,10 @@ nodemailer.createTestAccount((err, account) => {
 
     // Message object
     let message = {
-        from: 'MahedraSingh@gmail.com',
+        from: 'msc1994dc@gmail.com',
         to: `${toEmail}`,
         subject: 'Forgot password',
-        text: `Hi your secure code is -${code}`,
+        text: `Hi your secure code is - ${code}`,
 
     };
 
