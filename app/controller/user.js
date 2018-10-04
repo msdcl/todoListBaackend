@@ -52,7 +52,7 @@ let signUpFunction = (req, res) => {
                             userId: shortid.generate(),
                             firstName: req.body.firstName,
                             lastName: req.body.lastName || '',
-                            email: req.body.email.toLowerCase(),
+                            email: req.body.email,
                             mobileNumber: req.body.mobileNumber,
                             password: passwordLib.hashpassword(req.body.password),
                             createdOn: time.now(),
@@ -173,7 +173,7 @@ let loginFunction = (req, res) => {
         .then(generateToken)
         .then((resolve) => {
             let apiResponse = response.generate(false, 'Login Successful', 200, resolve)
-            res.status(200)
+           
             res.send(apiResponse)
         })
         .catch((err) => {
@@ -269,7 +269,7 @@ let forgotPassword = (req, res) => {
          .then(generateSecureCode)
          .then((resolve) => {
             let apiResponse = response.generate(false, 'We have send an email.', 200, resolve)
-            res.status(200)
+           
             res.send(apiResponse)
         })
         .catch((err) => {
